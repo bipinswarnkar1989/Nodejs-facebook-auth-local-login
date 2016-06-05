@@ -1,0 +1,60 @@
+<!-- views/signup.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<style>
+		body 		{ padding-top:80px; }
+		.box{background:#FD282D;color:white;}
+		.box a{color:white}
+		.links{color:#FD282D;background:white;width:100%;padding-left:15px;padding-right:5px;}
+		.links a{text-decoration: underline;color:#FD282D;}
+	</style>
+</head>
+<body>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3 box">
+
+	<h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+	<!-- show any messages that come back with authentication -->
+	<% if (message.length > 0) { %>
+		<div class="alert alert-danger"><%= message %></div>
+	<% } %>
+
+	<!-- LOGIN FORM -->
+	<form action="/signup" method="post">
+		<div class="form-group">
+			<label>Email</label>
+			<input type="text" class="form-control" name="email">
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="form-control" name="password">
+		</div>
+<div class="form-group">
+			<label>Firstname</label>
+			<input type="text" class="form-control" name="firstname">
+		</div>
+		
+		<div class="form-group">
+			<label>Lastname</label>
+			<input type="text" class="form-control" name="lastname">
+		</div>
+
+		<div align="center"><button type="submit" class="btn btn-warning btn-lg">Signup</button></div>
+	</form>
+
+<div class="links">
+    <p>Already have an account? <a href="/login">Login</a></p>
+	<p>Or go <a href="/">home</a>.</p>
+	</div>
+
+</div>
+
+</div>
+</body>
+</html>
